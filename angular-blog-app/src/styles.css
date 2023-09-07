@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75rem;    
+:root {
+    --primary-color: #026467;
+    --secondary-color: #E5F5EA;
+    --body-text-color: #596392;
+    --navbar-footer-color: #F9F9F9;
 }
 
-p {
-    color: cadetblue;
-    text-align: center;
-    font-weight: bold;
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    color: var(--body-text-color);
 }
+
+.site-logo {
+    padding: .25rem 1.25rem;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
