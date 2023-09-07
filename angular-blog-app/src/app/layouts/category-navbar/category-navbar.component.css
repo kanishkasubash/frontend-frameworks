@@ -13,6 +13,5 @@ nav {
 }
 
 .nav-link:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--body-text-color);
 }

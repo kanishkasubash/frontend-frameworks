@@ -23,6 +23,10 @@
     color: var(--secondary-color);
 }
 
+.text-body-color {
+    color: var(--body-text-color);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 0.75rem;
@@ -33,6 +37,5 @@ body {
     padding: .25rem 1.25rem;
     border-radius: 20px;
     text-decoration: none;
-    font-size: 1.2rem;
 }
 
