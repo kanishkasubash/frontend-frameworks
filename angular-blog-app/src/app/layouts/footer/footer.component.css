@@ -1,11 +1,12 @@
 footer {
-    height: 6.25rem;
+    height: 10rem;
     padding: 1rem;
-    background-color: var(--navbar-footer-color);
+    background-color: var(--light-color);
 }
 
 .nav-link {
     color: var(--primary-color);
+    font-weight: bold;
     text-decoration: none;
     background-image: linear-gradient(var(--primary-color), var(--primary-color));
     background-size: 0 2px, auto;

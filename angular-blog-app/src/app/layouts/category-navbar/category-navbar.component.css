@@ -3,7 +3,7 @@ nav {
     padding-top: 0;
     padding-bottom: 0;
     height: 3.125rem;
-    background-color: var(--navbar-footer-color);
+    background-color: var(--light-color);
 }
 
 .nav-link {

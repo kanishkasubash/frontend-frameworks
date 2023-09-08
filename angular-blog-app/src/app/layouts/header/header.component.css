@@ -3,3 +3,14 @@ header {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+img {
+    width: 50%;
+}
