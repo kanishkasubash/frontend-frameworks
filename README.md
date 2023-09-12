@@ -1,4 +1,4 @@
-# frontend-frameworks
+# Frontend Frameworks
 
 Front-end frameworks, often referred to as JavaScript frameworks or web development frameworks, are pre-built collections of tools, libraries, and best practices designed to simplify and streamline the process of building the user interface (UI) and user experience (UX) of a website or web application. These frameworks provide a structured way to develop web applications, making it easier for developers to create interactive, responsive, and aesthetically pleasing web interfaces. Here are some key aspects of front-end frameworks:
 
