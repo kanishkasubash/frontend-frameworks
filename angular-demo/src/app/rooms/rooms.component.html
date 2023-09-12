@@ -1,0 +1,6 @@
+<h2>{{ room }}</h2>
+<div [hidden]="hideRooms">
+    Number Of Rooms: 
+    <span [innerText]="numberOfRooms"></span>
+</div>
+<button (click)="roomToggle()">Check</button>
