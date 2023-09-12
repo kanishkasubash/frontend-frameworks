@@ -1,6 +1,12 @@
-<h2>{{ room }}</h2>
+<h2>Room Availability</h2>
+
 <div [hidden]="hideRooms">
-    Number Of Rooms: 
-    <span [innerText]="numberOfRooms"></span>
+    Number Of Total Rooms: 
+    <span [innerText]="numberOfRooms"></span><br>
+    Number Of Available Rooms: {{ rooms.availableRooms }}
+    <div *ngIf="rooms.availableRooms > 0 ">
+        Rooms List 
+    </div>
 </div>
+
 <button (click)="roomToggle()">Check</button>
