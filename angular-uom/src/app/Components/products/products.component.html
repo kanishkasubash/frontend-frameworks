@@ -25,7 +25,7 @@
                             [ngClass]="product.productName === 'White Basmathi Rice' && 200 > product.quantity && product.quantity >= 50 ? 'bg-warning' : ''">
                             {{product.productName}}</td>
                         <td>{{product.productDescription}}</td>
-                        <td>{{product.createdDate | date: "yyyy MMM dd"}}</td>
+                        <td>{{product.createdDate | date: "yyyy-MMM-dd"}}</td>
                         <td>{{product.unitPrice | currency: "Rs."}}</td>
                         <td>{{product.quantity}}</td>
                         <td>
