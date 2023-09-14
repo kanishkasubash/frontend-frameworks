@@ -1,0 +1,45 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <section class="col-md-12">
+            <div class="mt-3 mb-3">
+                <h3>Product List</h3>
+            </div>
+            <table class="table">
+                <thead class="thead-light t-head">
+                    <tr>
+                        <th scope="col">Product Id</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Description</th>
+                        <th scope="col">Created Date</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Quantity in Kgs</th>
+                        <th scope="col">Availability</th>
+                        <th scope="col">Product Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i)"
+                        [ngClass]="rowIndex == i ? 'active' : '' ">
+                        <th scope="row">{{product.productId}}</th>
+                        <td
+                            [ngClass]="product.productName === 'White Basmathi Rice' && 200 > product.quantity && product.quantity >= 50 ? 'bg-warning' : ''">
+                            {{product.productName}}</td>
+                        <td>{{product.productDescription}}</td>
+                        <td>{{product.createdDate | date: "yyyy MMM dd"}}</td>
+                        <td>{{product.unitPrice | currency: "Rs."}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>
+                            <p *ngIf="product.quantity <= 50">Lower Inventory Level</p>
+                            <p *ngIf="product.quantity > 50 && product.quantity <= 200">Average Inventory Level</p>
+                            <p *ngIf="product.quantity > 200">Sufficient Inventory Level</p>
+                        </td>
+                        <td>
+                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i class="fa fa-eye icon"></i></button>
+                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i class="fa fa-pencil-square-o icon"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
