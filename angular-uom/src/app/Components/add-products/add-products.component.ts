@@ -20,6 +20,8 @@ export class AddProductsComponent implements OnInit {
     category: ['', Validators.required],
     brand : ['', Validators.required],
     expiredDate: ['', Validators.required],
+    manufactureName: ['', Validators.required],
+    daysToDeliver: ['', [Validators.required, Validators.max(10)]],
     manufacturedDate: ['', Validators.required],
     batchNumber: ['', Validators.required],
     unitPrice: ['', [Validators.required, Validators.min(1)]],

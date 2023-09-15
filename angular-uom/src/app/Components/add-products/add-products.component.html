@@ -43,6 +43,24 @@
         </div>
         <div class="form-group">
             <div class="row">
+                <div class="col-md-9">
+                    <label class="form-label">Manufacture Name</label>
+                    <input type="text" class="form-control" formControlName="manufactureName">
+                    <div *ngIf="f['manufactureName'].touched && f['manufactureName'].invalid && f['manufactureName'].errors && f['manufactureName'].errors['required']"
+                        class="error">Manufacture Name is required</div>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Days to Deliver</label>
+                    <input type="number" class="form-control" formControlName="daysToDeliver">
+                    <div *ngIf="f['daysToDeliver'].touched && f['daysToDeliver'].invalid && f['daysToDeliver'].errors && f['daysToDeliver'].errors['required']"
+                        class="error">Product quantity is required</div>
+                    <div *ngIf="f['daysToDeliver'].touched && f['daysToDeliver'].invalid && f['daysToDeliver'].errors && f['daysToDeliver'].errors['max']"
+                        class="error">Number of Days to Deliver should be between 1 to 10 days.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
                 <div class="col-md-6">
                     <label class="form-label">Expiry Date</label>
                     <input type="date" class="form-control" formControlName="expiredDate">
