@@ -22,7 +22,7 @@
                         [ngClass]="rowIndex == i ? 'active' : '' ">
                         <th scope="row">{{product.productId}}</th>
                         <td
-                            [ngClass]="product.productName === 'White Basmathi Rice' && 200 > product.quantity && product.quantity >= 50 ? 'bg-warning' : ''">
+                            [ngClass]="product.quantity < 200 && product.quantity >= 50 ? 'bg-warning' : ''">
                             {{product.productName}}</td>
                         <td>{{product.productDescription}}</td>
                         <td>{{product.createdDate | date: "yyyy-MMM-dd"}}</td>
