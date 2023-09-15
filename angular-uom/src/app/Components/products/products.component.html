@@ -1,8 +1,10 @@
 <div class="container-fluid main-content">
     <div class="row">
-        <section class="col-md-12">
-            <div class="mt-3 mb-3">
-                <h3>Product List</h3>
+        <section [ngClass]="showAddProduct ? 'col-md-7' : 'col-md-12'">
+            <div class="product-header">
+                <h1>Product List</h1>
+                <button type="button" *ngIf="!showAddProduct" class="btn btn-outline-primary" (click)="showAddProducts()">Add Product</button>
+                <button type="button" *ngIf="showAddProduct" class="btn btn-outline-primary" (click)="hideAddProducts()">Close</button>
             </div>
             <table class="table">
                 <thead class="thead-light t-head">
@@ -40,6 +42,9 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+        <section class="col-md-5" *ngIf="showAddProduct">
+            <app-add-products></app-add-products>
         </section>
     </div>
 </div>

@@ -32,3 +32,16 @@ table tbody tr.active td {
     margin: 1px;
     border-radius: 2px;
 }
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: rgb(65, 65, 65);
+}

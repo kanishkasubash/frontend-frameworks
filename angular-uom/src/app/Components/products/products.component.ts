@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  public rowIndex!: number;
+  rowIndex!: number;
+  showAddProduct!: boolean;
 
   public products = [{
     'productId': "001",
@@ -47,8 +47,16 @@ export class ProductsComponent implements OnInit {
   }
   ]
 
-  public selectProduct(selectedRow: number) {
+  selectProduct(selectedRow: number) {
     this.rowIndex = selectedRow;
+  }
+
+  showAddProducts() {
+    this.showAddProduct = true;
+  }
+
+  hideAddProducts() {
+    this.showAddProduct = false;
   }
 
 }
