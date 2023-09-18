@@ -32,7 +32,7 @@ export class ProductsComponent implements OnInit {
     this.showAddProduct = true;
   }
 
-  hideAddProducts() {
+  closeAddProducts() {
     this.showAddProduct = false;
   }
 

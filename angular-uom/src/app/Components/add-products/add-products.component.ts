@@ -11,6 +11,7 @@ import { ProductService } from '../../Services/product.service';
 export class AddProductsComponent implements OnInit {
 
   @Output() productAddEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Output() closeAddEvent: EventEmitter<void> = new EventEmitter<void>();
 
   isDataUploading = false;
 
@@ -45,5 +46,9 @@ export class AddProductsComponent implements OnInit {
       this.isDataUploading = false;
       this.productFrom.reset();
     });
+  }
+
+  cancel(){
+    this.closeAddEvent.emit();
   }
 }
