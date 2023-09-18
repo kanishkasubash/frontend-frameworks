@@ -1,10 +1,16 @@
 <div class="container-fluid main-content">
     <div class="row">
-        <section [ngClass]="showAddProduct ? 'col-md-7' : 'col-md-12'">
+        <section [ngClass]="showAddProduct || showEditProduct ? 'col-md-7' : 'col-md-12'">
             <div class="product-header">
-                <h1>Product List</h1>
-                <button type="button" *ngIf="!showAddProduct" class="btn btn-outline-primary" (click)="showAddProducts()">Add Product</button>
-                <button type="button" *ngIf="showAddProduct" class="btn btn-outline-primary" (click)="hideAddProducts()">Close</button>
+                <h1> Product List <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
+                    <i *ngIf="isLoading" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>
+                </h1>
+                <button type="button" *ngIf="!showAddProduct" class="btn btn-outline-primary"
+                    (click)="showAddProducts()">Add Product</button>
+                <button type="button" *ngIf="showAddProduct" class="btn btn-outline-primary"
+                    (click)="hideAddProducts()">Close</button>
             </div>
             <table class="table">
                 <thead class="thead-light t-head">
@@ -20,11 +26,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i)"
+                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i, product.id)"
                         [ngClass]="rowIndex == i ? 'active' : '' ">
                         <th scope="row">{{product.id}}</th>
-                        <td
-                            [ngClass]="product.quantity < 200 && product.quantity >= 50 ? 'bg-warning' : ''">
+                        <td [ngClass]="product.quantity < 200 && product.quantity >= 50 ? 'bg-warning' : ''">
                             {{product.productName}}</td>
                         <td>{{product.description}}</td>
                         <td>{{product.createdDate| date: "dd-MMM-yyyy"}}</td>
@@ -36,15 +41,18 @@
                             <p *ngIf="product.quantity > 200">Sufficient Inventory Level</p>
                         </td>
                         <td>
-                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i class="fa fa-eye icon"></i></button>
-                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i class="fa fa-pencil-square-o icon"></i></button>
+                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i
+                                    class="fa fa-eye icon"></i></button>
+                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon" (click)="showEditProducts()"><i
+                                    class="fa fa-pencil-square-o icon"></i></button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <section class="col-md-5" *ngIf="showAddProduct">
-            <app-add-products></app-add-products>
+        <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
+            <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()"></app-add-products>
+            <app-edit-products *ngIf="showEditProduct" [productId]="selectedProductId"></app-edit-products>
         </section>
     </div>
 </div>

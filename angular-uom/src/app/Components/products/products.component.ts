@@ -18,11 +18,14 @@ export class ProductsComponent implements OnInit {
   rowIndex!: number;
   showAddProduct!: boolean;
   isLoading: boolean = false;
+  showEditProduct!: boolean;
+  selectedProductId!: number;
 
   public products: Product[] = [];
 
-  selectProduct(selectedRow: number) {
+  selectProduct(selectedRow: number, selectedId: number) {
     this.rowIndex = selectedRow;
+    this.selectedProductId = selectedId;
   }
 
   showAddProducts() {
@@ -33,12 +36,20 @@ export class ProductsComponent implements OnInit {
     this.showAddProduct = false;
   }
 
+  showEditProducts() {
+    this.showEditProduct = true;
+  }
+
   getProduct() {
     this.isLoading = true;
     this.productService.getProducts().subscribe((res) => {
       this.products = res.data;
       this.isLoading = false;
     })
+  }
+
+  updateProductList(){
+    this.getProduct();
   }
 
   refresh(){

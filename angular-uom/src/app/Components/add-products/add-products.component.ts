@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Product } from '../../Models/product.model';
 import { ProductService } from '../../Services/product.service';
@@ -9,6 +9,8 @@ import { ProductService } from '../../Services/product.service';
   styleUrls: ['./add-products.component.css']
 })
 export class AddProductsComponent implements OnInit {
+
+  @Output() productAddEvent: EventEmitter<void> = new EventEmitter<void>();
 
   isDataUploading = false;
 
@@ -37,7 +39,10 @@ export class AddProductsComponent implements OnInit {
   onSubmit() {
     const values = this.productFrom.value as Product;
     values.createdDate = new Date().toDateString();
+    this.isDataUploading = true;
     this.productService.addProduct(values as Product).subscribe((res) => {
+      this.productAddEvent.emit();
+      this.isDataUploading = false;
       this.productFrom.reset();
     });
   }
