@@ -64,10 +64,14 @@
                 <div class="col-md-6">
                     <label class="form-label">Expiry Date</label>
                     <input type="date" class="form-control" formControlName="expiredDate">
+                    <div *ngIf="f['expiredDate'].touched && f['expiredDate'].invalid && f['expiredDate'].errors && f['expiredDate'].errors['required']"
+                        class="error">Expired Date is required</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Manufactured Date</label>
                     <input type="date" class="form-control" formControlName="manufacturedDate">
+                    <div *ngIf="f['manufacturedDate'].touched && f['manufacturedDate'].invalid && f['manufacturedDate'].errors && f['manufacturedDate'].errors['required']"
+                        class="error">Manufactured Date is required</div>
                 </div>
             </div>
         </div>

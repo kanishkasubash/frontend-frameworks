@@ -14,7 +14,7 @@
                         <th scope="col">Product Description</th>
                         <th scope="col">Created Date</th>
                         <th scope="col">Unit Price</th>
-                        <th scope="col">Quantity in Kgs</th>
+                        <th scope="col">Quantity (Kg)</th>
                         <th scope="col">Availability</th>
                         <th scope="col">Product Actions</th>
                     </tr>
@@ -22,12 +22,12 @@
                 <tbody>
                     <tr *ngFor="let product of products let i = index" (click)="selectProduct(i)"
                         [ngClass]="rowIndex == i ? 'active' : '' ">
-                        <th scope="row">{{product.productId}}</th>
+                        <th scope="row">{{product.id}}</th>
                         <td
                             [ngClass]="product.quantity < 200 && product.quantity >= 50 ? 'bg-warning' : ''">
                             {{product.productName}}</td>
-                        <td>{{product.productDescription}}</td>
-                        <td>{{product.createdDate | date: "dd-MMM-yyyy"}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.createdDate| date: "dd-MMM-yyyy"}}</td>
                         <td>{{product.unitPrice | currency: "Rs."}}</td>
                         <td>{{product.quantity}}</td>
                         <td>

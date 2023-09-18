@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/Models/product.model';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -6,46 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit(): void { }
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void { 
+    this.getProduct();
+  }
 
   rowIndex!: number;
   showAddProduct!: boolean;
+  isLoading: boolean = false;
 
-  public products = [{
-    'productId': "001",
-    'productName': "White Basmathi Rice",
-    'createdDate': "Jan 29, 2020",
-    'quantity': 100,
-    'unitPrice': 400,
-    'productDescription': "White Basmathi Rice imported from pakistan"
-  },
-  {
-    'productId': "002",
-    'productName': "Flour",
-    'createdDate': "Jan 29, 2020",
-    'quantity': 50,
-    'unitPrice': 190,
-    'productDescription': "Super Fine Whole grain general Purpose flour"
-  },
-  {
-    'productId': "003",
-    'productName': "sugar",
-    'createdDate': "Jan 29, 2020",
-    'quantity': 1200,
-    'unitPrice': 200,
-    'productDescription': "White sugar manufactured by Palwatte Factory"
-  },
-  {
-    'productId': "004",
-    'productName': "Dhal",
-    'createdDate': "Jan 29, 2020",
-    'quantity': 10,
-    'unitPrice': 200,
-    'productDescription': "Imported mysoor dhal from India"
-  }
-  ]
+  public products: Product[] = [];
 
   selectProduct(selectedRow: number) {
     this.rowIndex = selectedRow;
@@ -57,6 +31,18 @@ export class ProductsComponent implements OnInit {
 
   hideAddProducts() {
     this.showAddProduct = false;
+  }
+
+  getProduct() {
+    this.isLoading = true;
+    this.productService.getProducts().subscribe((res) => {
+      this.products = res.data;
+      this.isLoading = false;
+    })
+  }
+
+  refresh(){
+    this.getProduct();
   }
 
 }

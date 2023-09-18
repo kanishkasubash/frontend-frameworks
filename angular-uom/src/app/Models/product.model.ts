@@ -3,10 +3,13 @@ export interface Product {
   productName: string;
   description: string;
   category: string;
-  brand: string
-  expiredDate: string;
-  manufacturedDate: string
+  brand: string;
+  batchNumber: string;
+  manufactureName: string;
+  daysToDeliver: number;
   createdDate: string;
+  expiredDate: string;
+  manufacturedDate: string;
   quantity: number;
   unitPrice: number;
 }

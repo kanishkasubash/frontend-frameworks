@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Product } from '../../Models/product.model';
+import { ProductService } from '../../Services/product.service';
 
 @Component({
   selector: 'app-add-products',
@@ -8,28 +10,35 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class AddProductsComponent implements OnInit {
 
-  ngOnInit(): void {}
+  isDataUploading = false;
 
-  onSubmit() {}
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private productService: ProductService) { }
 
   productFrom = this.fb.group({
     productName: ['', Validators.required],
     description: ['', Validators.required],
     category: ['', Validators.required],
-    brand : ['', Validators.required],
-    expiredDate: ['', Validators.required],
+    brand: ['', Validators.required],
+    batchNumber: ['', Validators.required],
     manufactureName: ['', Validators.required],
     daysToDeliver: ['', [Validators.required, Validators.max(10)]],
+    expiredDate: ['', Validators.required],
     manufacturedDate: ['', Validators.required],
-    batchNumber: ['', Validators.required],
     unitPrice: ['', [Validators.required, Validators.min(1)]],
     quantity: ['', [Validators.required, Validators.min(50)]],
-    createdDate: ['', Validators.required],
   });
+
+  ngOnInit(): void { }
 
   get f() {
     return this.productFrom.controls;
+  }
+
+  onSubmit() {
+    const values = this.productFrom.value as Product;
+    values.createdDate = new Date().toDateString();
+    this.productService.addProduct(values as Product).subscribe((res) => {
+      this.productFrom.reset();
+    });
   }
 }
