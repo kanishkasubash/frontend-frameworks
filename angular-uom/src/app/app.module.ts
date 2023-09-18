@@ -4,21 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { AddProductsComponent } from './Components/add-products/add-products.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProductsComponent } from './Components/edit-products/edit-products.component';
+import { ViewProductDetailsComponent } from './Components/view-product-details/view-product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     AddProductsComponent,
-    EditProductsComponent
+    EditProductsComponent,
+    ViewProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

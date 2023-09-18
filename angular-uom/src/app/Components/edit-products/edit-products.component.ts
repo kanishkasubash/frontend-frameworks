@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/Models/product.model';
 
 @Component({
   selector: 'app-edit-products',
@@ -7,7 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class EditProductsComponent implements OnInit {
 
-  @Input() productId!: number;
+  @Input() product!: Product;
+  isDataUploading = false;
   @Output() cancelEditEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }

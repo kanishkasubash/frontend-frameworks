@@ -26,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i, product.id)"
+                    <tr *ngFor="let product of products let i = index" (click)="selectProduct(i, product)"
                         [ngClass]="rowIndex == i ? 'active' : '' ">
                         <th scope="row">{{product.id}}</th>
                         <td [ngClass]="product.quantity < 200 && product.quantity >= 50 ? 'bg-warning' : ''">
@@ -52,7 +52,8 @@
         </section>
         <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
             <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()" (closeAddEvent)="closeAddProducts()"></app-add-products>
-            <app-edit-products *ngIf="showEditProduct" [productId]="selectedProductId" (cancelEditEvent)="closeEditView()"></app-edit-products>
-        </section>
+            <app-edit-products *ngIf="showEditProduct" [product]="selectedProduct" (cancelEditEvent)="closeEditView()"></app-edit-products>
+        </section>        
     </div>
+    <app-view-product-details></app-view-product-details>
 </div>

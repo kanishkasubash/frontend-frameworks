@@ -1,31 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from 'src/app/Models/product.model';
 import { ProductService } from 'src/app/Services/product.service';
+import { ViewProductDetailsComponent } from '../view-product-details/view-product-details.component';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent implements OnInit {
-
-  constructor(private productService: ProductService) { }
-
-  ngOnInit(): void { 
-    this.getProduct();
-  }
-
+export class ProductsComponent implements OnInit, AfterViewInit {
+  
   rowIndex!: number;
   showAddProduct!: boolean;
   isLoading: boolean = false;
   showEditProduct!: boolean;
-  selectedProductId!: number;
+  selectedProduct!: Product;
+  message!: string;
+
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void { 
+    this.getProduct();    
+  }
+
+  ngAfterViewInit(){
+
+  }
 
   public products: Product[] = [];
 
-  selectProduct(selectedRow: number, selectedId: number) {
+  selectProduct(selectedRow: number, product: Product) {
     this.rowIndex = selectedRow;
-    this.selectedProductId = selectedId;
+    this.selectedProduct = product;
   }
 
   showAddProducts() {
