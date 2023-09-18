@@ -9,7 +9,7 @@ import { ViewProductDetailsComponent } from '../view-product-details/view-produc
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit, AfterViewInit {
-  
+
   rowIndex!: number;
   showAddProduct!: boolean;
   isLoading: boolean = false;
@@ -19,11 +19,11 @@ export class ProductsComponent implements OnInit, AfterViewInit {
 
   constructor(private productService: ProductService) { }
 
-  ngOnInit(): void { 
-    this.getProduct();    
+  ngOnInit(): void {
+    this.getProduct();
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
 
   }
 
@@ -35,6 +35,9 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   }
 
   showAddProducts() {
+    if (this.showEditProduct) {
+      this.showEditProduct = false;
+    }
     this.showAddProduct = true;
   }
 
@@ -43,6 +46,9 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   }
 
   showEditProducts() {
+    if (this.showAddProduct) {
+      this.showAddProduct = false;
+    }
     this.showEditProduct = true;
   }
 
@@ -54,15 +60,15 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     })
   }
 
-  updateProductList(){
+  updateProductList() {
     this.getProduct();
   }
 
-  closeEditView(){
+  closeEditView() {
     this.showEditProduct = false;
   }
 
-  refresh(){
+  refresh() {
     this.getProduct();
   }
 
