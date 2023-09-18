@@ -52,6 +52,10 @@ export class ProductsComponent implements OnInit {
     this.getProduct();
   }
 
+  closeEditView(){
+    this.showEditProduct = false;
+  }
+
   refresh(){
     this.getProduct();
   }

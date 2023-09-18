@@ -52,7 +52,7 @@
         </section>
         <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
             <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()"></app-add-products>
-            <app-edit-products *ngIf="showEditProduct" [productId]="selectedProductId"></app-edit-products>
+            <app-edit-products *ngIf="showEditProduct" [productId]="selectedProductId" (cancelEditEvent)="closeEditView()"></app-edit-products>
         </section>
     </div>
 </div>
