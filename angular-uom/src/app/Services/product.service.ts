@@ -26,7 +26,7 @@ export class ProductService {
     );
   }
 
-  getProducts(): Observable<ProductResponse>{
+  getProducts(): Observable<ProductResponse> {
     return this.http.get<ProductResponse>(`${this.baseUrl}api/products`);
   }
 
@@ -34,7 +34,7 @@ export class ProductService {
     return this.http.put<any>(this.baseUrl + 'api/products', product);
   }
 
-  getProductById(id: any): Observable<any>{
+  getProductById(id: any): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}api/products/${id}`);
   }
 }
