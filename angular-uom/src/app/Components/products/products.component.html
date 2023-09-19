@@ -39,18 +39,23 @@
                             <p *ngIf="product.quantity > 200">Sufficient Inventory Level</p>
                         </td>
                         <td>
-                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"><i
-                                    class="fa fa-eye icon"></i></button>
-                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon" (click)="showEditProducts()"><i
-                                    class="fa fa-pencil-square-o icon"></i></button>
+                            <a [routerLink]="['/product-detail-view', product.id]">
+                                <button type="button" [disabled]="rowIndex != i" class="btn-xs icon">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </a>
+                            <button type="button" [disabled]="rowIndex != i" class="btn-xs icon"
+                                (click)="showEditProducts()"><i class="fa fa-pencil-square-o icon"></i></button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
         <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
-            <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()" (closeAddEvent)="closeAddProducts()"></app-add-products>
-            <app-edit-products *ngIf="showEditProduct" [product]="selectedProduct" (cancelEditEvent)="closeEditView()" (productAddEvent)="updateProductList()"></app-edit-products>
-        </section>        
+            <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()"
+                (closeAddEvent)="closeAddProducts()"></app-add-products>
+            <app-edit-products *ngIf="showEditProduct" [product]="selectedProduct" (cancelEditEvent)="closeEditView()"
+                (productAddEvent)="updateProductList()"></app-edit-products>
+        </section>
     </div>
 </div>

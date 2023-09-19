@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/Models/product.model';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-view-product-details',
@@ -7,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProductDetailsComponent implements OnInit {
 
-  childMessage: string = "Message From Child";
+  public product!: Product;
 
-  constructor() { }
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let selectedProductId = this.route.snapshot.paramMap.get('id');
+    this.productService.getProductById(selectedProductId).subscribe((res) => {
+      this.product = res.data;
+    });
   }
 
 }
