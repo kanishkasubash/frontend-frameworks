@@ -4,6 +4,7 @@ import { ViewProductDetailsComponent } from './Components/view-product-details/v
 import { ProductsComponent } from './Components/products/products.component';
 
 const routes: Routes = [
+  {path : '' , component: ProductsComponent},
   {path : 'products' , component: ProductsComponent},
   {path : 'product-detail-view/:id' , component: ViewProductDetailsComponent}
 ];  
