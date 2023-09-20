@@ -27,7 +27,7 @@
                         <td>{{ supplier.id }}</td>
                         <td>{{ supplier.supplierName }}</td>
                         <td>{{ supplier.address}}</td>
-                        <td>{{ supplier.joinedDate }}</td>
+                        <td>{{ supplier.joinedDate | date: 'MMMM d y' }}</td>
                         <td>{{ supplier.mobileNo }}</td>
                         <td>
                             <a [routerLink]="['/supplier-detail-view', supplier.id]">
