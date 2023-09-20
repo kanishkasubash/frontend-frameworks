@@ -20,7 +20,7 @@ export class SupplierService {
 
   addSupplier(supplier: Supplier): Observable<AddSupplierResponse> {
     return this.http.post<AddSupplierResponse>(
-      `${this.baseUrl}api/suppliers`,
+      `${this.baseUrl}api/supplier`,
       supplier,
       this.httpOptions
     );
