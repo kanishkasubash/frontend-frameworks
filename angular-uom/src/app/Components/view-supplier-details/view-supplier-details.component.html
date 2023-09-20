@@ -1,1 +1,64 @@
-<p>view-supplier-details works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="text-end mt-3 mb-3"></div>
+        <div class="col-md-10 content-bg">
+            <div>
+                <h5 class="mb-3">{{ supplier.supplierName }}</h5>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="form-label">Supplier ID:</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ supplier.id }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="form-label">Supplier Name:</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ supplier.supplierName }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="form-label">Address:</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ supplier.address }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="form-label">Mobile Number:</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ supplier.mobileNo }}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label class="form-label">Joined Date:</label>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ supplier.joinedDate | date: "dd/MM/yyyy" }}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -55,7 +55,7 @@
             <app-add-products *ngIf="showAddProduct" (productAddEvent)="updateProductList()"
                 (closeAddEvent)="closeAddProducts()"></app-add-products>
             <app-edit-products *ngIf="showEditProduct" [product]="selectedProduct" (cancelEditEvent)="closeEditView()"
-                (productAddEvent)="updateProductList()"></app-edit-products>
+                (editProductEvent)="updateProductList()"></app-edit-products>
         </section>
     </div>
 </div>

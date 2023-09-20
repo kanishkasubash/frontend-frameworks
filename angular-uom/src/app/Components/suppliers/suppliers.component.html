@@ -1,6 +1,6 @@
 <div class="container-fluid main-content">
     <div class="row">
-        <section [ngClass]="showAddSupplier ? 'col-md-7' : 'col-md-12'">
+        <section [ngClass]="showAddSupplier || showEditSupplier ? 'col-md-7' : 'col-md-12'">
             <div class="supplier-header">
                 <h1> Supplier List <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer">
                         <i class="fa fa-refresh" aria-hidden="true"></i>
@@ -42,8 +42,11 @@
                 </tbody>
             </table>
         </section>
-        <section class="col-md-5" *ngIf="showAddSupplier">
-            <app-add-suppliers (cancelAddView)="hideAddSuppliers()" (supplierAddEvent)="updateSupplierList()"></app-add-suppliers>
+        <section class="col-md-5" *ngIf="showAddSupplier || showEditSupplier">
+            <app-add-suppliers *ngIf="showAddSupplier" (cancelAddView)="hideAddSuppliers()"
+                (supplierAddEvent)="updateSupplierList()"></app-add-suppliers>
+            <app-edit-suppliers *ngIf="showEditSupplier" [supplier]="selectedSupplier"
+                (cancelEditEvent)="hideEditSuppliers()" (editSupplierEvent)="updateSupplierList()"></app-edit-suppliers>
         </section>
     </div>
 </div>

@@ -31,7 +31,7 @@ export class SupplierService {
   }
 
   updateSupplier(supplier: Supplier): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}api/suppliers`, supplier);
+    return this.http.put<any>(this.baseUrl + 'api/suppliers', supplier);
   }
 
   getSupplierById(id: any): Observable<any> {
