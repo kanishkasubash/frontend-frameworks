@@ -6,7 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment.prod'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -24,6 +24,7 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 import { PostCardComponent } from './layouts/post-card/post-card.component';
 import { CommentComponent } from './comments/comment/comment.component';
 import { DashboardComponent } from './backend/dashboard/dashboard.component';
+import { CategoriesComponent } from './backend/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +43,14 @@ import { DashboardComponent } from './backend/dashboard/dashboard.component';
     CommentListComponent,
     PostCardComponent,
     CommentComponent,
-    DashboardComponent    
+    DashboardComponent,
+    CategoriesComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],

@@ -7,6 +7,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DashboardComponent } from './backend/dashboard/dashboard.component';
+import { CategoriesComponent } from './backend/categories/categories.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'contact', component: ContactUsComponent},
 
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'categories', component: CategoriesComponent},
 ];
 
 @NgModule({
