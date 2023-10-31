@@ -45,6 +45,10 @@ body {
     color: var(--light-color);
 }
 
+.card-cursor {
+    cursor: pointer;
+}
+
 .card-effect {
     max-width: fit-content;
     padding-inline: 0rem !important;
