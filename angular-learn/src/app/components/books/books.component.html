@@ -1,0 +1,31 @@
+<h2>Programming Book List</h2>
+<button [disabled]="isDisabled" (click)="handleClick()">Show Books</button><span style="margin-left: 1rem;">You clicked {{ clicks }}</span>
+<br>
+<br>
+<input type="text" [(ngModel)]="inputValue"><span style="margin-left: 1rem;">{{ inputValue }}</span>
+<div class="container">
+    <img [src]="books[0].image.url" [alt]="books[0].image.alt" [width]="listImageWidth">
+    <div class="content">
+        <ul class="content-list">
+            <li><span>Name:</span> {{ books[0].name }}</li>
+            <li><span>Description:</span> {{ books[0].description }}</li>
+            <li><span>Category:</span> {{ books[0].category }}</li>
+            <li><span>Author:</span> {{ books[0].author }}</li>
+            <li><span>ISBN:</span> {{ books[0].isbn }}</li>
+            <li><span>Edition:</span> {{ books[0].edition }}</li>
+            <li><span>Publisher:</span> {{ books[0].publisher }}</li>
+        </ul>
+    </div>
+    <img [src]="books[1].image.url" [alt]="books[1].image.alt" [width]="listImageWidth">
+    <div class="content">
+        <ul class="content-list">
+            <li><span>Name:</span> {{ books[1].name }}</li>
+            <li><span>Description:</span> {{ books[1].description }}</li>
+            <li><span>Category:</span> {{ books[1].category }}</li>
+            <li><span>Author:</span> {{ books[1].author }}</li>
+            <li><span>ISBN:</span> {{ books[1].isbn }}</li>
+            <li><span>Edition:</span> {{ books[1].edition }}</li>
+            <li><span>Publisher:</span> {{ books[1].publisher }}</li>
+        </ul>
+    </div>
+</div>

@@ -12,7 +12,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(formData: any) {
-
+    console.log(formData.value);
   }
 
 }

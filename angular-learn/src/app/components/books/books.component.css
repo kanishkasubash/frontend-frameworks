@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-block: 2rem;
+}
+
+.content {
+    padding-right: 2rem;
+}
+
+.content-list {
+    list-style: none;
+}
+
+.content-list li {
+    font-size: 1rem;
+    padding-bottom: .75rem;
+}
+
+.content-list li span {
+    font-weight: bold;
+}
