@@ -11,4 +11,8 @@ export class BooksComponent {
   
   books: Book[] = bookList;
   listImageWidth: number = 300;
+
+  addToCart(book: Book){
+    console.log(book);
+  }
 }
