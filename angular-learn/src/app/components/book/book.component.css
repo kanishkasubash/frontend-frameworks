@@ -1,0 +1,29 @@
+.book-card {
+    width: 51.25rem;
+    display: flex;
+    flex-direction: row;
+    margin-block: 1rem;
+}
+
+.content {
+    padding-right: 2rem;
+}
+
+.content-list {
+    list-style: none;
+}
+
+.content-list li {
+    font-size: 1rem;
+    padding-bottom: .75rem;
+}
+
+.content-list .price {
+    color: crimson;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content-list li span {
+    font-weight: bold;
+}

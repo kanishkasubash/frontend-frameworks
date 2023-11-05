@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { books } from './books'
+import { bookList } from './book-list'
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-books',
@@ -8,21 +9,6 @@ import { books } from './books'
 })
 export class BooksComponent {
   
-  books: any = books;
-
-  // [width]="listImageWidth" Property Binding
-  listImageWidth: number = 200;
-  // [disabled]="isDisabled" Property Binding
-  isDisabled: boolean = false;
-
-  // {{ clicks }} Angular interpolation
-  clicks: number = 0;
-
-  // [(ngModel)]="inputValue" Two-way Binding
-  inputValue: string = '';
-
-  // (click)="handleClick()" Event Binding
-  handleClick() {
-    this.clicks++;
-  }
+  books: Book[] = bookList;
+  listImageWidth: number = 300;
 }

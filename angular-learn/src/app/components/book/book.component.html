@@ -1,0 +1,17 @@
+<div class="book-card">
+    <img [src]="book.image.url" [alt]="book.image.alt" [width]="width">
+    <div class="content">
+        <ul class="content-list">
+            <li><span>Name:</span> {{ book.name }}</li>
+            <li><span>Description:</span> {{ book.description }}</li>
+            <li><span>Category:</span> {{ book.category }}</li>
+            <li><span>Author:</span> {{ book.author }}</li>
+            <li><span>ISBN:</span> {{ book.isbn }}</li>
+            <li><span>Edition:</span> {{ book.edition }}</li>
+            <li><span>Publisher:</span> {{ book.publisher }}</li>
+            <li><span>Publication date:</span> {{ book.publicationDate | date }}</li>
+            <li class="price"><span>Price:</span> {{ book.price | currency }}</li>
+            <li><button>Add to Cart</button></li>
+        </ul>
+    </div>
+</div>
