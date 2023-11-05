@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { bookList } from './book-list'
 import { Book } from '../../models/book';
 
@@ -7,7 +7,13 @@ import { Book } from '../../models/book';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit {
+
+  constructor() {}
+
+  ngOnInit(): void {
+      
+  }
   
   books: Book[] = bookList;
   listImageWidth: number = 300;
