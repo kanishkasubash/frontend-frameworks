@@ -1,6 +1,6 @@
 <h2>Programming Book List</h2>
 <div class="container">
     <ng-container *ngFor="let book of books">
-        <app-book (bookEmitter)="addToCart($event)" [book]="book" [imageWidth]="listImageWidth"></app-book>
+        <app-book [book]="book"></app-book>
     </ng-container>
 </div>

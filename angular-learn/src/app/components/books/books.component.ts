@@ -10,15 +10,10 @@ import { BooksService } from 'src/app/services/books.service';
 export class BooksComponent implements OnInit {
 
   books: Book[] = [];
-  listImageWidth: number = 300;
 
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
     this.books  = this.booksService.getBooks();
-  }  
-
-  addToCart(book: Book){
-    console.log(book);
   }
 }

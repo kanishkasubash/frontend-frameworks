@@ -1,5 +1,5 @@
 <div class="book-card">
-    <img [src]="book.image.url" [alt]="book.image.alt" [width]="imageWidth">
+    <img [src]="book.image.url" [alt]="book.image.alt" width="150" height="200">
     <div class="content">
         <ul class="content-list">
             <li><span>Name:</span> {{ book.name }}</li>
@@ -11,7 +11,10 @@
             <li><span>Publisher:</span> {{ book.publisher }}</li>
             <li><span>Publication date:</span> {{ book.publicationDate | date }}</li>
             <li class="price"><span>Price:</span> {{ book.price | currency }}</li>
-            <li><button (click)="addToCart()">Add to Cart</button></li>
+            <li>
+                <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+                <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+            </li>
         </ul>
     </div>
 </div>

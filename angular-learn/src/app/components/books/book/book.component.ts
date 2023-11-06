@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/models/book';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-book',
@@ -8,13 +9,19 @@ import { Book } from 'src/app/models/book';
 })
 export class BookComponent {
 
-  @Input() book: Book = {} as Book;
-  @Input() imageWidth: number = 0;
+  @Input() book: Book = {} as Book;  
+  isInCart: boolean = false;
 
-  @Output() bookEmitter = new EventEmitter<Book>();
+  constructor(private cartService: CartService){}
 
   addToCart(){
-    this.bookEmitter.emit(this.book);
+    this.isInCart = true;
+    this.cartService.add(this.book);
+  }
+
+  removeFromCart(){
+    this.isInCart = false;
+    this.cartService.remove(this.book);
   }
 
 }

@@ -7,7 +7,8 @@ export class BooksService {
   constructor() { }
 
   /**
-   * get all books from bookList[]
+   * Get all books data
+   * @returns bookList[ ]
    */
   getBooks(){
     return bookList;
