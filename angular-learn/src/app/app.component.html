@@ -1,9 +1,13 @@
-<nav class="">
+<nav class="w-full flex justify-between p-5 bg-indigo-800 text-white">
     <div>
-        <h1>Book Shop</h1>
+        <a class="font-bold text-2xl" routerLink="/">Book Shop</a>
     </div>
     <div>
-        <button>My Cart</button>
+        <a class="p-2 hover:underline" routerLink="/cart">My Cart</a>        
+        <a class="p-2 hover:underline" routerLink="">Register</a>
+        <a class="p-2 hover:underline" routerLink="">Login</a>
     </div>
 </nav>
-<router-outlet></router-outlet>
+<main class="container mx-auto px-5 lg:px-5">
+    <router-outlet></router-outlet>
+</main>

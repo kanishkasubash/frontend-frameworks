@@ -1,20 +1,20 @@
-<div class="book-card">
-    <img [src]="book.image.url" [alt]="book.image.alt" width="150" height="200">
-    <div class="content">
-        <ul class="content-list">
-            <li><span>Name:</span> {{ book.name }}</li>
-            <li><span>Description:</span> {{ book.description }}</li>
-            <li><span>Category:</span> {{ book.category }}</li>
-            <li><span>Author:</span> {{ book.author }}</li>
-            <li><span>ISBN:</span> {{ book.isbn }}</li>
-            <li><span>Edition:</span> {{ book.edition }}</li>
-            <li><span>Publisher:</span> {{ book.publisher }}</li>
-            <li><span>Publication date:</span> {{ book.publicationDate | date }}</li>
-            <li class="price"><span>Price:</span> {{ book.price | currency }}</li>
-            <li>
-                <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
-                <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
-            </li>
-        </ul>
+<div class="border-amber-600 border-2">
+    <div class="flex flex-row max-sm:flex-col">
+        <div class="pl-5 pt-5">
+            <img [src]="book.image.url" [alt]="book.image.alt" class="w-[180px] h-[220px]">
+        </div>
+        <div class="px-5 py-5">
+            <p><span class="font-bold">Name:</span> {{ book.name }}</p>
+            <p><span class="font-bold">Description:</span> {{ book.description }}</p>
+            <p><span class="font-bold">Category:</span> {{ book.category }}</p>
+            <p><span class="font-bold">Author:</span> {{ book.author }}</p>
+            <p><span class="font-bold">ISBN:</span> {{ book.isbn }}</p>
+            <p><span class="font-bold">Edition:</span> {{ book.edition }}</p>
+            <p><span class="font-bold">Publisher:</span> {{ book.publisher }}</p>
+            <p><span class="font-bold">Publication date:</span> {{ book.publicationDate | date }}</p>
+            <p class="text-red-600 text-xl"><span class="font-bold">Price:</span> {{ book.price | currency }}</p>
+            <button class="bg-green-700 text-white font-semibold mt-2 p-2 rounded hover:bg-green-500" *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+            <button class="bg-red-700 text-white font-semibold mt-2 p-2 rounded hover:bg-red-500" *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+        </div>
     </div>
 </div>
