@@ -1,6 +1,8 @@
-<h2 class="font-bold text-2xl py-5">Programming Book List</h2>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-    <ng-container *ngFor="let book of books">
-        <app-book [book]="book"></app-book>
-    </ng-container>
+<div>
+    <h2 class="py-5 text-2xl font-bold">Programming Book List</h2>
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <ng-container *ngFor="let book of books">
+            <app-book [book]="book"></app-book>
+        </ng-container>
+    </div>
 </div>

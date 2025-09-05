@@ -1,20 +1,20 @@
-<div class="border-amber-600 border-2">
+<div class="border-2 border-amber-600">
     <div class="flex flex-row max-sm:flex-col">
-        <div class="pl-5 pt-5">
-            <img [src]="book.image.url" [alt]="book.image.alt" class="w-[180px] h-[220px]">
+        <div class="w-[180px] h-[220px] pt-5 pl-5">
+            <img [src]="book.image.url" [alt]="book.image.alt" class="w-full">
         </div>
         <div class="px-5 py-5">
-            <p><span class="font-bold">Name:</span> {{ book.name }}</p>
-            <p><span class="font-bold">Description:</span> {{ book.description }}</p>
-            <p><span class="font-bold">Category:</span> {{ book.category }}</p>
-            <p><span class="font-bold">Author:</span> {{ book.author }}</p>
-            <p><span class="font-bold">ISBN:</span> {{ book.isbn }}</p>
-            <p><span class="font-bold">Edition:</span> {{ book.edition }}</p>
-            <p><span class="font-bold">Publisher:</span> {{ book.publisher }}</p>
-            <p><span class="font-bold">Publication date:</span> {{ book.publicationDate | date }}</p>
-            <p class="text-red-600 text-xl"><span class="font-bold">Price:</span> {{ book.price | currency }}</p>
-            <button class="bg-green-700 text-white font-semibold mt-2 p-2 rounded hover:bg-green-500" *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
-            <button class="bg-red-700 text-white font-semibold mt-2 p-2 rounded hover:bg-red-500" *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+            <p class="text-sm"><span class="font-bold">Name:</span> {{ book.name }}</p>
+            <p  class="text-sm"><span class="font-bold">Description:</span> {{ book.description }}</p>
+            <p  class="text-sm"><span class="font-bold">Category:</span> {{ book.category }}</p>
+            <p  class="text-sm"><span class="font-bold">Author:</span> {{ book.author }}</p>
+            <p  class="text-sm"><span class="font-bold">ISBN:</span> {{ book.isbn }}</p>
+            <p  class="text-sm"><span class="font-bold">Edition:</span> {{ book.edition }}</p>
+            <p  class="text-sm"><span class="font-bold">Publisher:</span> {{ book.publisher }}</p>
+            <p  class="text-sm"><span class="font-bold">Publication date:</span> {{ book.publicationDate | date }}</p>
+            <p class="text-xl text-red-600"><span class="font-bold">Price:</span> {{ book.price | currency }}</p>
+            <button class="px-4 py-2 mt-2 font-semibold text-white bg-green-500 rounded-full hover:bg-green-700" *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+            <button class="px-4 py-2 mt-2 font-semibold text-white bg-red-500 rounded-full hover:bg-red-700" *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
         </div>
     </div>
 </div>

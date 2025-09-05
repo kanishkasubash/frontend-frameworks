@@ -1,13 +1,13 @@
-<nav class="w-full flex justify-between p-5 bg-indigo-800 text-white">
+<nav class="flex justify-between w-full p-5 text-white bg-indigo-800">
     <div>
-        <a class="font-bold text-2xl" routerLink="/">Book Shop</a>
+        <a class="text-2xl font-bold" routerLink="/">Book Shop</a>
     </div>
     <div>
-        <a class="p-2 hover:underline" routerLink="/cart">My Cart</a>        
-        <a class="p-2 hover:underline" routerLink="">Register</a>
-        <a class="p-2 hover:underline" routerLink="">Login</a>
+        <a class="mx-4" routerLink="/cart">My Cart</a>        
+        <a class="mx-4" routerLink="/register">Register</a>
+        <a class="mx-4" routerLink="/login">Login</a>
     </div>
 </nav>
-<main class="container mx-auto px-5 lg:px-5">
+<main class="container px-5 py-10 mx-auto lg:px-8">
     <router-outlet></router-outlet>
 </main>

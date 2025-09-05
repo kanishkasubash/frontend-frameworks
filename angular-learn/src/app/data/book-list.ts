@@ -32,7 +32,7 @@ export const bookList = [
     {
         name: 'Clean Architecture',
         description: `A Craftsman's Guide to Software Structure and Design`,
-        category: 'Hardware Design & Architecture',
+        category: 'Computer Hardware Design & Architecture',
         author: 'Robert C. Martin',
         isbn: '0134494164',
         edition: '1st',
